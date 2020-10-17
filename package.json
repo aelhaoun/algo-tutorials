@@ -14,7 +14,7 @@
     "chai",
     "sinon"
   ],
-  "author": "millsky",
+  "author": "Amine EL HAOUNI",
   "license": "MIT ",
   "devDependencies": {
     "babel-core": "^6.26.0",
