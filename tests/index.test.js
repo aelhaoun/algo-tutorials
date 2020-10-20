@@ -1,32 +1,22 @@
 import { expect } from 'chai';
-import { findMax, reverseArray, filterEven } from '../src/index'
+import { insertionSort } from '../src/sort';
 
-describe('Test fin Max in array', () => {
-    it('Test with positif positif number', () => {
-        expect(findMax([3, 0, 4, 2, 6, 1])).to.equal(6);
+describe('Test insertion sort', () => {
+    it('Test with sort random numbers', () => {
+        const input = [3, 0, 4, 2, 6, 1];
+        const result = insertionSort(input);
+        expect(result).to.eql([0, 1, 2, 3, 4, 6]);
     });
 
-    it('Test with negatif positif number', () => {
-        expect(findMax([-3, -4, 0, -2, -6, -1])).to.equal(0);
-    });
-});
-
-describe('Test reverse array', () => {
-    it('Test reverse array with elements', () => {
-        expect(reverseArray([3, 0, 4, 2, 6, 1])).to.eql([1, 6, 2, 4, 0, 3]);
+    it('Test with sort nealy sorted array of numbers', () => {
+        const input = [0, 1, 0, 3, 4, 6];
+        const result = insertionSort(input);
+        expect(result).to.eql([0, 0, 1, 3, 4, 6]);
     });
 
-    it('Test reverse empty array', () => {
-        expect(reverseArray([])).to.eql([]);
-    });
-});
-
-describe('Test filter even number in array', () => {
-    it('Test filter even numbers in array with elements', () => {
-        expect(filterEven([3, 0, 4, 2, 6, 1])).to.eql([0, 4, 2, 6]);
-    });
-
-    it('Test filter even numbers in empty array', () => {
-        expect(filterEven([])).to.eql([]);
+    it('Test with sort desendent array of numbers', () => {
+        const input = [6, 5, 4, 3, 2, 1];
+        const result = insertionSort(input);
+        expect(result).to.eql([1, 2, 3, 4 ,5 ,6]);
     });
 });
